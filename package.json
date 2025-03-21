@@ -1,5 +1,5 @@
 {
-  "name": "eslint",
+  "name": "animaisfantasticos",
   "version": "1.0.0",
   "main": "exercicios.js",
   "scripts": {
@@ -9,7 +9,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@babel/core": "^7.26.10",
     "@babel/plugin-transform-runtime": "^7.26.10",
