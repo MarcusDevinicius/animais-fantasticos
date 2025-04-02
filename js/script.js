@@ -16,9 +16,11 @@ scrollsuave.init();
 const accordion = new Accordion('[data-anime="accordion"] dt');
 accordion.init();
 
-const tabnav = new TabNav('[data-tab="menu"] li', '[data-tab="content"] section');
-tabnav.init();
-
+const tabnav = new TabNav(
+  '[data-tab="menu"] li',
+  '[data-tab="content"] section'
+);
+tabnav.tabNavInit();
 
 initModal();
 initTolltip();
