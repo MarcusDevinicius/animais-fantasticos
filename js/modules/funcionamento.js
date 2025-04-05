@@ -7,21 +7,19 @@ export default class Funcionamento {
   dadosFuncionamento() {
     this.diasSemana = this.funcionamento.dataset.semana.split(", ").map(Number); //Ao passar o split a string se torna Array, e passando o map(Number) retorna uma nova Array, porém com os valores em number
     this.horarioSemana = this.funcionamento.dataset.horario
-      .split(", ")
+      .split(",")
       .map(Number);
   }
 
   dadosAgora() {
     this.dataAgora = new Date();
-    this.diaAgora = dataAgora.getDay();
-    this.horaAgora = dataAgora.getUTCHours() - 3; //horario universal(- 3 por que é o calculo em relação ao Brasil)
+    this.diaAgora = this.dataAgora.getDay();
+    this.horaAgora = this.dataAgora.getUTCHours() - 3; //horario universal(- 3 por que é o calculo em relação ao Brasil)
   }
 
   estaAberto() {
-    const semanaAberto = this.diasSemana.indexOf(diaAgora) !== -1; //se um elemento nao está na Array retorna-se -1;
-    const horaAberto =
-      this.horaAgora >= horarioSemana[0] &&
-      this.horaAgora < this.horarioSemana[1];
+    const semanaAberto = this.diasSemana.indexOf(this.diaAgora) !== -1; //se um elemento nao está na Array retorna-se -1;
+    const horaAberto = (this.horaAgora >= this.horarioSemana[0] && this.horaAgora < this.horarioSemana[1]);
 
     return semanaAberto && horaAberto;
   }
