@@ -4,11 +4,12 @@ import TabNav from "./modules/tabnav.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
 import DropdownMenu from "./modules/dropdown-menu.js";
-import initMenuMobile from "./modules/menu-mobile.js";
+import MenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import fetchAnimais from "./modules/fetchanimais.js";
 import fetchBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnima from "./modules/scrollAnima.js";
+
 
 const scrollsuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]'); //COm isso qualque pesssoa poderá importar essa classe com esse método de scroll suave para seu site.
 scrollsuave.init();
@@ -38,8 +39,10 @@ scrollAnima.init();
 const dropdownMenu = new DropdownMenu("[data-dropdown]", ["touchstart", "click"]);
 dropdownMenu.init();
 
+const menumobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
+menumobile.init();
 
-initMenuMobile();
+
 initFuncionamento();
 
 fetchAnimais("../../animaisapi.json", ".numeros-grid");
